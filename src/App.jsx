@@ -19,6 +19,7 @@ import icnshipping from "./assets/icn_Shipping.svg";
 import egeo from "./assets/logo_egeo.svg";
 import icnsearch from "./assets/icn_search.svg";
 import icnbasket from "./assets/icn_basket.svg";
+import icnaccount from "./assets/icn-account.svg";
 
 export default function App() {
   const router = createBrowserRouter(
@@ -65,24 +66,25 @@ const Root = () => {
       </div>
 
       <div className="head-logo-search">
-        <img src={egeo} alt="Gözlə logo gələcək" />
+        <img
+          src={egeo}
+          style={{ cursor: "pointer" }}
+          alt="Gözlə logo gələcək"
+        />
         <div style={{ display: "none" }}></div>
         <div className="search-wrap">
           <div className="search">
             <input type="text" className="searchTerm" placeholder="Search..." />
             <button type="submit" className="searchButton">
-              <img src={icnsearch} alt="axtar bala" />
+              <img src={icnsearch} alt="#" />
             </button>
           </div>
         </div>
         <div className="head-signin-singup">
-          <div style={{ cursor: "pointer" }}>SIGN IN</div>
-          <div className="line-solid"></div>
-          <div style={{ cursor: "pointer" }}>SIGN UP</div>
+          <img src={icnaccount} alt="#" style={{ cursor: "pointer" }} />
           <div className="line-solid"></div>
 
-          <img src={icnbasket} alt="#" />
-          
+          <img src={icnbasket} alt="#" style={{ cursor: "pointer" }} />
         </div>
       </div>
 

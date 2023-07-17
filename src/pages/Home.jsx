@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import arrow from "../assets/arrow.svg";
 
 export default function App() {
   return (
@@ -115,6 +116,13 @@ export default function App() {
           />
         </SwiperSlide>
       </Swiper>
+
+      <div className="get-started">
+        Sign up for news & get 20% off
+        <button>
+          GET STARTED <img src={arrow} alt="#" />
+        </button>
+      </div>
     </>
   );
 }
