@@ -1,4 +1,4 @@
-import "./App.scss";
+import "./style/App.scss";
 import "swiper/scss";
 import {
   createBrowserRouter,
@@ -7,8 +7,9 @@ import {
   Outlet,
   RouterProvider,
   NavLink,
+  useLocation,
 } from "react-router-dom";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Women from "./pages/Women";
 import Men from "./pages/Men";
 import Kids from "./pages/Kids";
@@ -44,26 +45,29 @@ export default function App() {
 }
 
 const Root = () => {
+  const location = useLocation();
   return (
     <>
-      <div
-        className="head-ship"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "22px",
-          width: "100%",
-          height: "40px",
-          backgroundColor: "#8F8977",
-        }}
-      >
-        <img src={icnshipping} alt="#" />
-        <p style={{ color: "white", fontSize: "15px" }}>
-          FREE SHIPPING ON ORDERS OF $50 OR MORE
-        </p>
-        <p style={{ color: "white", fontSize: "10px" }}>DETAILS</p>
-      </div>
+      {location.pathname == "/" && (
+        <div
+          className="head-ship"
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "22px",
+            width: "100%",
+            height: "40px",
+            backgroundColor: "#8F8977",
+          }}
+        >
+          <img src={icnshipping} alt="#" />
+          <p style={{ color: "white", fontSize: "15px" }}>
+            FREE SHIPPING ON ORDERS OF $50 OR MORE
+          </p>
+          <p style={{ color: "white", fontSize: "10px" }}>DETAILS</p>
+        </div>
+      )}
 
       <div className="head-logo-search">
         <img
